@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-deno-plugin",
+        "enable": true, // default is `true`
+        "importmap": "import_map.json"
+      }
+    ]
+  }
+}
+

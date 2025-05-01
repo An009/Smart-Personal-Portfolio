@@ -1,0 +1,97 @@
+{
+  "personalInfo": {
+    "name": "ANOUAR TIZGUI",
+    "address": "Tanger, 90045, Morocco",
+    "phone": "+212690334225",
+    "email": "tizguianouar@gmail.com",
+    "summary": "Dedicated and skilled Web Developer and Email Marketer with a strong foundation in software design, development, and maintenance, coupled with expertise in crafting effective email marketing campaigns. Proficient in multiple programming languages and frameworks, with a passion for problem-solving and creating efficient solutions. Seeking to contribute to innovative projects as a dynamic team member."
+  },
+  "experience": [
+    {
+      "title": "Email Marketer",
+      "company": "Operating Media",
+      "period": "Sep 2021 - Jul 2023",
+      "location": "Tanger",
+      "description": [
+        "Develop, execute, and monitor email marketing campaigns that align with brand strategies.",
+        "Write engaging subject lines, email copy, and calls-to-action to improve open and click-through rates.",
+        "Track metrics such as open rates, click rates, and conversion rates to measure campaign success.",
+        "Monitor email deliverability, manage sender reputation, and resolve issues to maintain high inbox placement rates.",
+        "Work with design, sales, and product teams to align email campaigns with larger business goals."
+      ],
+      "skills": ["Email Marketing", "Campaign Analysis", "Copywriting"]
+    },
+    {
+      "title": "Laser Technician",
+      "company": "KLC Plastics Maroc",
+      "period": "Aug 2023 - Aug 2024",
+      "location": "Tanger",
+      "description": [
+        "Installed and commissioned laser systems according to client specifications.",
+        "Configured laser parameters based on application requirements.",
+        "Implemented safety measures to minimize risks associated with laser operations.",
+        "Collaborated with engineering teams to enhance system performance.",
+        "Maintained comprehensive documentation of installations and maintenance tasks."
+      ],
+      "skills": ["Laser Systems", "Technical Documentation", "Safety Protocols"]
+    },
+    {
+      "title": "Intern",
+      "company": "Stryve Solutions",
+      "period": "Internship Period",
+      "location": "Marrakech",
+      "description": [
+        "Created high-fidelity Figma mockups for a restaurant homepage, including sections for restaurant details, featured dishes, and customer reviews.",
+        "Used React to implement the design, making it responsive and interactive.",
+        "Integrated dynamic data using APIs."
+      ],
+      "skills": ["Figma", "React", "API Integration"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Specialized Technician diploma",
+      "institution": "Specialized institute of Applied Technology (ISTA), Tinghir",
+      "period": "Sep 2021 - Jul 2023",
+      "description": "Web full stack development",
+      "skills": []
+    },
+    {
+      "degree": "Baccalauréat",
+      "institution": "Moulay Abdellah Ben Hssain High School, Tinghir",
+      "period": "Jul 2016",
+      "description": "Physics and Chemistry",
+      "skills": []
+    }
+  ],
+  "skills": {
+    "programming": ["Python", "JavaScript", "PHP"],
+    "frameworks": ["React", "Vue.js", "Laravel", "Angular"],
+    "databases": ["SQL", "MySQL", "PostgreSQL", "MongoDB"],
+    "tools": ["Git", "Jira", "Visual Studio", "Eclipse", "Docker"],
+    "design": ["UML", "Adobe Photoshop", "Figma", "MVC"],
+    "other": [
+      "Email Campaign Creation",
+      "Problem-Solving Mindset",
+      "Critical Thinking"
+    ]
+  },
+  "certifications": [
+    "English for Tourism - Restaurant Service, Allsson Oct 2021",
+    "Microsoft Office Specialist, Microsoft May 2023"
+  ],
+  "languages": [
+    { "name": "English", "level": "Advanced" },
+    { "name": "French", "level": "Advanced" },
+    { "name": "Arabic", "level": "Fluent" },
+    { "name": "Tamazight", "level": "Mother Tongue" }
+  ],
+  "interests": [
+    "Programming",
+    "Marketing",
+    "UX/UI Design",
+    "Music (Guitar and Piano)",
+    "Learning Languages",
+    "Travel and exploring new cultures"
+  ]
+}
