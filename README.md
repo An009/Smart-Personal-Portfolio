@@ -20,7 +20,7 @@
 <br>
 
 ## 🌐 Live Demo
-Experience the portfolio live: [portfolio.yourdomain.com](https://anouarcodes.tech)
+Experience the portfolio live: [anouarcodes.tech](https://anouarcodes.tech)
 
 ## ✨ Key Features
 - **3D Animated Intro** with Three.js
