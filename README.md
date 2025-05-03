@@ -10,14 +10,13 @@
 </div>
 
 <br>
-
 <div align="center">
-  <a href="#live-demo" style="text-decoration: none">🚀 Live Demo</a> •
+  <a href="#-live-demo" style="text-decoration: none">🚀 Live Demo</a> •
   <a href="#ai-chatbot" style="text-decoration: none">🤖 AI Chatbot</a> •
-  <a href="#key-features" style="text-decoration: none">✨ Features</a> •
-  <a href="#tech-stack" style="text-decoration: none">🛠 Tech Stack</a> •
-  <a href="#installation" style="text-decoration: none">⚙️ Installation</a> •
-  <a href="#license" style="text-decoration: none">📜 License</a>
+  <a href="#-key-features" style="text-decoration: none">✨ Features</a> •
+  <a href="#-tech-stack" style="text-decoration: none">🛠 Tech Stack</a> •
+  <a href="#-installation" style="text-decoration: none">⚙️ Installation</a> •
+  <a href="#-license" style="text-decoration: none">📜 License</a>
 </div>
 
 <br>
@@ -48,13 +47,13 @@ The portfolio features an intelligent chatbot powered by:
 | **Content** | Interactive blog with markdown support |
 | **Professional** | Complete resume with skills visualization |
 
-## 🛠 Tech Stack Deep Dive
+## 🛠 Tech Stack
 ### Core Technologies
 - **Frontend**: React 18, TypeScript 5, Next.js 13
 - **Styling**: Tailwind CSS 3, Framer Motion 11
 - **AI**: Cohere Embed v3, Supabase Vector Search
 
-## 🚀 Installation & Setup
+## 🚀 Installation
   ```bash
     # 1. Clone with deno support
   git clone --recurse-submodules https://github.com/An009/Smart-Personal-Portfolio.git
