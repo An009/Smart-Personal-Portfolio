@@ -12,12 +12,12 @@
 <br>
 
 <div align="center">
-  <a href="#live-demo">🚀 Live Demo</a> •
-  <a href="#ai-chatbot">🤖 AI Chatbot</a> •
-  <a href="#key-features">✨ Features</a> •
-  <a href="#tech-stack">🛠 Tech Stack</a> •
-  <a href="#installation">⚙️ Installation</a> •
-  <a href="#license">📜 License</a>
+  <a href="#live-demo" style="text-decoration: none">🚀 Live Demo</a> •
+  <a href="#ai-chatbot" style="text-decoration: none">🤖 AI Chatbot</a> •
+  <a href="#key-features" style="text-decoration: none">✨ Features</a> •
+  <a href="#tech-stack" style="text-decoration: none">🛠 Tech Stack</a> •
+  <a href="#installation" style="text-decoration: none">⚙️ Installation</a> •
+  <a href="#license" style="text-decoration: none">📜 License</a>
 </div>
 
 <br>
