@@ -19,10 +19,8 @@
 
 <br>
 
-![Portfolio Showcase](https://user-images.githubusercontent.com/65219666/185798481-3e3105a7-7e2e-4f2e-9a2a-3a1c4f7f9e3f.png)
-
 ## 🌐 Live Demo
-Experience the portfolio live: [portfolio.yourdomain.com](https://portfolio.yourdomain.com)
+Experience the portfolio live: [portfolio.yourdomain.com](https://anouarcodes.tech)
 
 ## ✨ Key Features
 - **3D Animated Intro** with Three.js
@@ -42,7 +40,6 @@ Experience the portfolio live: [portfolio.yourdomain.com](https://portfolio.your
 | **Deployment** | Vercel (with CI/CD)                        |
 
 ## 🚀 Installation
-
 1. Clone the repository:
   ```bash
    git clone https://github.com/An009/Smart-Personal-Portfolio.git
