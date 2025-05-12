@@ -7,9 +7,9 @@ export function Resume() {
   return (
     <div className="relative min-h-screen bg-white dark:bg-transparent transition-colors duration-300">
       {/* Page Content */}
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen pt-20">
         {/* Blurred Small Page */}
-        <div className="relative max-w-5xl w-full p-8 sm:p-12 bg-white/70 dark:bg-gray-800/70 rounded-2xl shadow-2xl mt-20 mb-5 backdrop-blur-md">
+        <div className="relative max-w-7xl p-8 bg-transparent dark:bg-transparent rounded-2xl shadow-2xl mt-5 mb-5 backdrop-blur-md">
           {/* Content */}
           <div>
             {/* Header */}
