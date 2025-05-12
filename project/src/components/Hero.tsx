@@ -39,7 +39,7 @@ export function Hero() {
   };
 
   const title = "ⴰⵣⵓⵍ";
-  const subtitle = "Creative People";
+  const subtitle = "CREATIVE PEOPLE";
 
   return (
     <section
