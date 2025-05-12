@@ -9,6 +9,6 @@ export default defineConfig({
     include: ["date-fns"],
   },
   build: {
-    target: "esnext", // Use a modern target that supports top-level await
+    target: "esnext",
   },
 });
