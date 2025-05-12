@@ -17,6 +17,7 @@
     "date-fns": "^4.1.0",
     "dotenv": "^16.4.7",
     "framer-motion": "^11.0.8",
+    "front-matter": "^4.0.2",
     "lucide-react": "^0.344.0",
     "openai": "^4.78.1",
     "react": "^18.3.1",
