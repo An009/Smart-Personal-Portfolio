@@ -12,7 +12,9 @@
   "dependencies": {
     "@deno/shim-deno": "^0.19.2",
     "@supabase/supabase-js": "^2.49.1",
+    "@types/date-fns": "^2.5.3",
     "cohere-ai": "^7.15.4",
+    "date-fns": "^4.1.0",
     "dotenv": "^16.4.7",
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.344.0",
