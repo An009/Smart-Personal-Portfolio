@@ -13,7 +13,6 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-    // Get saved theme from localStorage or fallback to system preference
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme") as Theme | null;
       if (savedTheme && ["dark", "light", "system"].includes(savedTheme)) {
@@ -27,7 +26,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [appliedTheme, setAppliedTheme] = useState<AppliedTheme>("light");
 
   useEffect(() => {
-    // Determine which theme to actually apply (handles system preference)
     const root = window.document.documentElement;
 
     const applyTheme = (themeToApply: AppliedTheme) => {

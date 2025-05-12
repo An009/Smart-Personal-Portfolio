@@ -45,7 +45,7 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <NavLink
             href="#Hero"

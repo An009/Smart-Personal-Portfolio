@@ -221,7 +221,7 @@ export function Projects() {
       id="projects"
       className="py-20 bg-white dark:bg-transparent transition-colors duration-300"
     >
-      <div className="container mx-auto px-4">
+      <div className="container max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8 text-gray-800 dark:text-white">
           PROJECTS
         </h2>

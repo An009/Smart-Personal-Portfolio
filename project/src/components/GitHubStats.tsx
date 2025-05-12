@@ -120,7 +120,7 @@ const GitHubStats: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white/10 dark:bg-gray-900/50 backdrop-blur-sm rounded-lg p-3 h-full transition-colors mt-4 border border-white/20 dark:border-gray-700/50 shadow-lg">
+    <div className="max-w-7xl mx-auto bg-white/10 dark:bg-gray-900/50 backdrop-blur-sm rounded-lg p-3 h-full transition-colors mt-4 border border-white/20 dark:border-gray-700/50 shadow-lg">
       <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600 mb-3">
         GitHub Stats
       </h2>

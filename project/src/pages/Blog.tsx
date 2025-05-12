@@ -44,7 +44,7 @@ export function Blog() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-transparent pt-20">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container max-w-7xl mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-center text-blue-800 dark:text-blue-200 mb-12">
           Blog Posts
         </h1>
