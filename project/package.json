@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@deno/shim-deno": "^0.19.2",
+    "@octokit/rest": "^21.1.1",
     "@supabase/supabase-js": "^2.49.1",
     "@types/date-fns": "^2.5.3",
     "cohere-ai": "^7.15.4",
