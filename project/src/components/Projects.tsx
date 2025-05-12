@@ -3,14 +3,14 @@ import { ProjectCard } from "./ProjectCard.tsx";
 import { DesignCard } from "./DesignCard.tsx";
 import { Search, GitBranch, User, Loader } from "lucide-react";
 import { Octokit } from "@octokit/rest";
-import gitLogo from "../assets/githubLogo.png";
-import gitLogo2 from "../assets/gitlogo2.png";
-import gitLogo3 from "../assets/gitlogo3.png";
-import gitLogo4 from "../assets/gitlogo4.png";
-import acaHouse from "../assets/DesignCardAssests/acaHouse.png";
-import frestica from "../assets/DesignCardAssests/frestica.png";
-import styla from "../assets/DesignCardAssests/styla.png";
-import backpack from "../assets/DesignCardAssests/backpack.png";
+import gitLogo from "@/assets/githubLogo.png";
+import gitLogo2 from "@/assets/gitlogo2.png";
+import gitLogo3 from "@/assets/gitlogo3.png";
+import gitLogo4 from "@/assets/gitlogo4.png";
+import acaHouse from "@/assets/DesignCardAssests/acaHouse.png";
+import frestica from "@/assets/DesignCardAssests/frestica.png";
+import styla from "@/assets/DesignCardAssests/styla.png";
+import backpack from "@/assets/DesignCardAssests/backpack.png";
 
 type ProjectType = "development" | "design";
 
