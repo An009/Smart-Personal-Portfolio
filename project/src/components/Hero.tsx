@@ -38,8 +38,8 @@ export function Hero() {
     },
   };
 
-  const title = "ⴰⵎⵔⴰⴳ";
-  const subtitle = " ⵎⴰⵏⵉ ⵏ ⵎⴰⵢⵜⴰⵡⴰⵡ";
+  const title = "ⴰⵣⵓⵍ";
+  const subtitle = "Creative People";
 
   return (
     <section
