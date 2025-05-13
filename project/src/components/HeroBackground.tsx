@@ -1,4 +1,4 @@
-import heroBg from "../assets/Etheron.png";
+import heroBg from "@/assets/Etheron.png";
 
 export function HeroBackground() {
   return (
