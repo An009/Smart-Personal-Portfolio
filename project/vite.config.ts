@@ -9,6 +9,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@posts": path.resolve(__dirname, "./src/posts"),
+      '@public': path.resolve(__dirname, './public'),
     },
   },
   assetsInclude: ["**/*.md", "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg"],
