@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import earth from "../assets/purppleP.png";
+import earth from "@/assets/purppleP.png";
 
 interface ProfileImageProps {
   alt: string;
