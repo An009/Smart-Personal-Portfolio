@@ -5,7 +5,6 @@ import { Search, GitBranch, User, Loader } from "lucide-react";
 import { Octokit } from "@octokit/rest";
 import gitLogo from "@/assets/githubLogo.png";
 import gitLogo2 from "@/assets/gitlogo2.png";
-import gitLogo3 from "@/assets/gitlogo3.png";
 import gitLogo4 from "@/assets/gitlogo4.png";
 import acaHouse from "@/assets/DesignCardAssests/acaHouse.png";
 import frestica from "@/assets/DesignCardAssests/frestica.png";
@@ -44,7 +43,7 @@ export function Projects() {
   const githubUsername = "An009";
 
   // Default images for projects
-  const defaultImages = [gitLogo, gitLogo2, gitLogo3, gitLogo4];
+  const defaultImages = [gitLogo, gitLogo2, gitLogo4];
 
   const designProjects = [
     {
