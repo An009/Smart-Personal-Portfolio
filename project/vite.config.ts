@@ -17,21 +17,18 @@ export default defineConfig({
     include: ["date-fns", "front-matter"],
   },
   build: {
-    target: "esnext",
+    assetsInlineLimit: 4096, // 4kb (files smaller than this get inlined)
     rollupOptions: {
       output: {
-        assetFileNames: "assets/[name].[hash][extname]",
-        manualChunks(id) {
-          if (id.includes("lucide-react")) {
-            return "lucide";
+        assetFileNames: (assetInfo) => {
+          // Organize assets by type
+          if (assetInfo.name && /\.(png|jpe?g|svg|gif)$/.test(assetInfo.name)) {
+            return "assets/images/[name].[hash][extname]";
           }
-          if (id.includes("node_modules")) {
-            return "vendor";
-          }
+          return "assets/[name].[hash][extname]";
         },
       },
     },
-    chunkSizeWarningLimit: 1500,
   },
   server: {
     fs: {
