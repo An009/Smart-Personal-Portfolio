@@ -1,21 +1,8 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "vite.config.ts",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/assets/(.*)",
-      "dest": "/src/assets/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
-      }
+      "dest": "/public/assets/$1"
     }
   ]
 }
