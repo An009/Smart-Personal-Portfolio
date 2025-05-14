@@ -43,7 +43,7 @@ export function Projects() {
 
   const githubUsername = "An009";
 
-  // Default images for projects
+  // Default images for projects designed by An009
   const defaultImages = [gitLogo, gitLogo2, gitLogo3, gitLogo4];
 
   const designProjects = [
