@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import purppleP from "@/assets/purppleP.png";
+import purpplep from "@/assets/purpplep.png";
 
 interface ProfileImageProps {
   alt: string;
@@ -14,7 +14,7 @@ export function ProfileImage({ alt, size = "w-64 h-64" }: ProfileImageProps) {
       <div className="absolute inset-[80px] bg-gray-800 rounded-full z-100" />
       {/* Spinning image */}
       <motion.img
-        src={purppleP}
+        src={purpplep}
         alt={alt}
         className="absolute inset-0 w-full h-full rounded-full object-cover z-30"
         animate={{ rotate: 360 }}

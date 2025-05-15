@@ -3,11 +3,11 @@ import { ProjectCard } from "./ProjectCard.tsx";
 import { DesignCard } from "./DesignCard.tsx";
 import { Search, GitBranch, User, Loader } from "lucide-react";
 import { Octokit } from "@octokit/rest";
-import gitLogo from "@/assets/githubLogo.png";
-import gitLogo2 from "@/assets/gitlogo2.png";
-import gitLogo3 from "@/assets/gitlogo3.png";
-import gitLogo4 from "@/assets/gitlogo4.png";
-import acaHouse from "@/assets/DesignCardAssests/acaHouse.png";
+import githunlogo from "@/assets/githunlogo.png";
+import gitlogo2 from "@/assets/gitlogo2.png";
+import gitlogo3 from "@/assets/gitlogo3.png";
+import gitlogo4 from "@/assets/gitlogo4.png";
+import acahouse from "@/assets/DesignCardAssests/acahouse.png";
 import frestica from "@/assets/DesignCardAssests/frestica.png";
 import styla from "@/assets/DesignCardAssests/styla.png";
 import backpack from "@/assets/DesignCardAssests/backpack.png";
@@ -44,14 +44,14 @@ export function Projects() {
   const githubUsername = "An009";
 
   // Default images for projects designed by An009
-  const defaultImages = [gitLogo, gitLogo2, gitLogo3, gitLogo4];
+  const defaultImages = [githunlogo, gitlogo2, gitlogo3, gitlogo4];
 
   const designProjects = [
     {
       title: "ACA House Website",
       description:
         "Interactive prototype for ACA House website with modern design and seamless user experience",
-      image: acaHouse,
+      image: acahouse,
       category: "UI/UX Design",
       link: "https://www.figma.com/proto/pZSVeK9mibtuosmvaOvZqH/ACA-House-Website",
     },
