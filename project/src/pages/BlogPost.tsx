@@ -80,7 +80,7 @@ export function BlogPost() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20 transition-colors duration-300">
       <div className="backdrop-blur-lg bg-white/70 dark:bg-gray-800/70">
-        <div className="container mx-auto px-4 py-12">
+        <div className="container max-w-7xl mx-auto px-4 py-12">
           <Link
             to="/blog"
             className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 mb-8 transition-colors duration-300"
