@@ -1,10 +1,10 @@
 ---
 title: "Building a Chatbot with OpenAI, Supabase, and Edge Functions"
-date: "Mar 15, 2024"
+date: "Mar 15, 2025"
 author: "Anouar Tizgui"
-tags: ["React", "AI", "archeticture", "Web Development"]
+tags: ["React", "AI", "architecture", "Web Development"]
 category: "Artificial Intelligence"
-description: "powerful chatbot using OpenAI, Supabase, and Edge Functions—three technologies that ensure efficiency, scalability, and lightning-fast responses."
+description: "Build a powerful chatbot using OpenAI, Supabase, and Edge Functions—three technologies that ensure efficiency, scalability, and lightning-fast responses."
 ---
 
 ## Introduction
@@ -19,9 +19,7 @@ Before diving into the technical steps, let’s explore why we’re using these 
 - **Supabase**: Acts as a scalable backend for authentication, data storage, and serverless functions.
 - **Edge Functions**: Improve response times by executing functions closer to the user, making interactions feel seamless and near-instant.
 
-Now, let’s get started!
-
-yOrrwSUIMixOApNI4SIfvJGuIDbcUp
+---
 
 ## Step 1: Setting Up Supabase
 
@@ -33,16 +31,20 @@ yOrrwSUIMixOApNI4SIfvJGuIDbcUp
 
 ### 1.2 Create a Database Table for Chat History (Optional)
 
-1. Navigate to the **SQL Editor** and run the following query to create a table:
-   ```sql
-   CREATE TABLE messages (
-       id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-       user_message TEXT,
-       bot_response TEXT,
-       created_at TIMESTAMP DEFAULT now()
-   );
-   ```
-2. This table stores user inputs and bot responses, helping you analyze and improve the chatbot’s performance over time.
+Navigate to the **SQL Editor** and run the following:
+
+```sql
+CREATE TABLE messages (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_message TEXT,
+    bot_response TEXT,
+    created_at TIMESTAMP DEFAULT now()
+);
+```
+
+This table stores user inputs and bot responses, helping you analyze and improve the chatbot’s performance over time.
+
+---
 
 ## Step 2: Integrating OpenAI API
 
@@ -53,15 +55,15 @@ yOrrwSUIMixOApNI4SIfvJGuIDbcUp
 
 ### 2.2 Make API Calls to OpenAI
 
-In your React app, install Axios to handle API requests:
+In your React app, install Axios:
 
 ```bash
 npm install axios
 ```
 
-Then, create a function to send user messages to OpenAI:
+Then use the following helper:
 
-```javascript
+```js
 import axios from "axios";
 
 const getChatbotResponse = async (message) => {
@@ -79,29 +81,89 @@ const getChatbotResponse = async (message) => {
 };
 ```
 
+---
+
 ## Step 3: Deploying Edge Functions in Supabase
 
 ### 3.1 Creating an Edge Function
 
 1. Open the **Supabase Dashboard**.
-2. Navigate to **Edge Functions** and create a new function.
-3. Write the function to handle chatbot requests:
-   ```javascript
-   export default async (req, res) => {
-     const { message } = await req.json();
-     const botResponse = await getChatbotResponse(message);
-     return new Response(JSON.stringify({ botResponse }), { status: 200 });
-   };
-   ```
-4. Deploy the function and note the **public endpoint URL**.
+2. Go to **Edge Functions** and click "New Function".
+3. Use the following code:
+
+```ts
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+
+console.log("Chatbot Edge Function running...");
+
+serve(async (req) => {
+  try {
+    if (req.method !== "POST") {
+      return new Response(
+        JSON.stringify({ error: "Method Not Allowed" }),
+        { status: 405, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    const { message } = await req.json();
+
+    if (!message || typeof message !== "string") {
+      return new Response(
+        JSON.stringify({ error: "Invalid input: 'message' is required" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Deno.env.get("OPENAI_API_KEY")}`,
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: message }],
+      }),
+    });
+
+    if (!openaiRes.ok) {
+      const error = await openaiRes.text();
+      return new Response(
+        JSON.stringify({ error: "OpenAI API Error", details: error }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    const openaiData = await openaiRes.json();
+    const botResponse = openaiData.choices[0]?.message?.content ?? "Sorry, I couldn't understand that.";
+
+    return new Response(
+      JSON.stringify({ botResponse }),
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
+  } catch (err) {
+    console.error("Unexpected error:", err);
+    return new Response(
+      JSON.stringify({ error: "Internal Server Error" }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
+  }
+});
+```
+
+Deploy using:
+
+```bash
+supabase functions deploy chatbot-function
+```
+
+---
 
 ## Step 4: Building the Chatbot UI in React
 
-### 4.1 Creating the Chat Interface
+Use Tailwind and React for the frontend:
 
-Use **React and Tailwind CSS** to create a simple chatbot UI:
-
-```javascript
+```js
 import { useState } from "react";
 
 const Chatbot = () => {
@@ -126,12 +188,8 @@ const Chatbot = () => {
     <div className="max-w-md mx-auto p-4 border rounded-lg shadow-md">
       <div className="h-64 overflow-y-auto p-2 border-b">
         {messages.map((msg, index) => (
-          <p
-            key={index}
-            className={msg.role === "user" ? "text-right" : "text-left"}
-          >
-            <strong>{msg.role === "user" ? "You" : "Bot"}:</strong>{" "}
-            {msg.content}
+          <p key={index} className={msg.role === "user" ? "text-right" : "text-left"}>
+            <strong>{msg.role === "user" ? "You" : "Bot"}:</strong> {msg.content}
           </p>
         ))}
       </div>
@@ -155,19 +213,30 @@ const Chatbot = () => {
 export default Chatbot;
 ```
 
-## Step 5: Deploying Your Chatbot
+---
 
-1. Push your code to GitHub.
-2. Deploy to **Vercel, Netlify, or your preferred hosting platform**.
-3. Configure environment variables for your **API keys** and **Supabase Edge Function URL**.
+## Step 5: Deployment
 
-## Lessons Learned & Challenges
+- Push to GitHub.
+- Deploy using Vercel, Netlify, or another platform.
+- Add API keys and edge function URL to environment variables.
 
-- **Optimizing OpenAI API Calls**: Caching responses and limiting unnecessary API requests improved performance.
-- **Handling Errors**: Implementing error-handling mechanisms prevented crashes.
-- **UI/UX Considerations**: Making the chatbot visually appealing and responsive enhanced user experience.
+---
 
-## Conclusion
+## Lessons Learned
 
-You’ve now built a fully functional AI-powered chatbot using **OpenAI, Supabase, and Edge Functions**. This chatbot can be expanded with features like **user authentication, message persistence, and multimodal AI responses**. Start experimenting and take your chatbot to the next level!
-🚀 **Ready to enhance your chatbot further? Share your improvements and insights in the comments!**
+- Caching and reducing API calls improved latency.
+- Handling edge cases prevented user crashes.
+- A better UI helped improve retention and usability.
+
+---
+
+## References
+
+- <a href="https://platform.openai.com/docs" target="_blank">OpenAI Documentation</a>  
+- <a href="https://supabase.com/docs" target="_blank">Supabase Documentation</a>  
+- <a href="https://supabase.com/docs/guides/functions" target="_blank">Supabase Edge Functions</a>  
+- <a href="https://github.com/pgvector/pgvector" target="_blank">pgvector</a>  
+- <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>  
+- <a href="https://axios-http.com/" target="_blank">Axios</a>  
+- <a href="https://reactjs.org/" target="_blank">React</a>
