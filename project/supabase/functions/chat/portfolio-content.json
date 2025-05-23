@@ -1,51 +1,107 @@
 [
-    {
-      "id": 1,
-      "content": "My name is Anouar Tizgui, and I am from Tinghir. I have a passion for traveling, exploring different cultures, and learning new languages. Currently, I am learning German. My native language is Tamazight."
-    },
-    {
-      "id": 2,
-      "content": "I have a diverse professional background, starting as a Laser Technician in the automotive industry. My responsibilities included operating laser engraving machines for car buttons, ensuring precision in engraving, performing quality control checks, maintaining laser equipment, and optimizing laser parameters for efficient production."
-    },
-    {
-      "id": 3,
-      "content": "I transitioned into the marketing field, where I managed and executed email campaigns, optimized email deliverability, conducted market research, analyzed campaign performance metrics, and developed engagement strategies to improve customer outreach."
-    },
-    {
-      "id": 4,
-      "content": "Currently, I am working as an IT Developer specializing in React, Astro, and other development tools such as Ruby and MongoDB. I am focused on building scalable web applications and integrating modern technologies."
-    },
-    {
-      "id": 5,
-      "content": "I am highly interested in AI and actively learning advanced AI technologies to expand my expertise in the field."
-    },
-    {
-      "id": 6,
-      "content": "I use Git for version control to manage all my development projects efficiently."
-    },
-    {
-      "id": 7,
-      "content": "I am currently taking a data analysis course with ALX Africa to enhance my analytical skills and leverage data-driven insights in my work."
-    },
-    {
-      "id": 8,
-      "content": "I do not have experience working in international teams yet, but I am open to the opportunity in the future."
-    },
-    {
-      "id": 9,
-      "content": "My long-term career goal is to become a leading expert in AI-driven automation and data analysis, creating innovative solutions that optimize workflows."
-    },
-    {
-      "id": 10,
-      "content": "What motivates me in my work is the challenge of solving complex problems, continuous learning, and building solutions that have a real-world impact."
-    },
-    {
-      "id": 11,
-      "content": "The tools and software I use daily include Git, VS Code, React, Astro, MongoDB, and Selenium for automation."
-    },
-    {
-      "id": 12,
-      "content": "I enjoy automation and frequently use Selenium to streamline repetitive tasks and improve efficiency."
+  {
+    "id": 1,
+    "content": "My name is Anouar Tizgui, and I am from Tinghir. I have a passion for traveling, exploring different cultures, and learning new languages. Currently, I am learning German. My native language is Tamazight, and I am also fluent in Arabic and French.",
+    "metadata": {
+      "type": "bio",
+      "tags": ["personal", "travel", "languages", "learning"]
     }
-  ]
-  
+  },
+  {
+    "id": 2,
+    "content": "I have a diverse professional background, starting as a Laser Technician in the automotive industry. My responsibilities included operating laser engraving machines for car buttons, ensuring quality standards, and collaborating with engineers.",
+    "metadata": {
+      "type": "experience",
+      "tags": ["laser", "automotive", "technician", "manufacturing"]
+    }
+  },
+  {
+    "id": 3,
+    "content": "I transitioned into the marketing field, where I managed and executed email campaigns, optimized email deliverability, conducted market research, analyzed campaign performance metrics, and contributed to team strategy sessions.",
+    "metadata": {
+      "type": "experience",
+      "tags": ["marketing", "email", "research", "strategy"]
+    }
+  },
+  {
+    "id": 4,
+    "content": "Currently, I am working as an IT Developer specializing in React, Astro, and other development tools such as Ruby and MongoDB. I am focused on building scalable web applications and advancing my programming skills.",
+    "metadata": {
+      "type": "experience",
+      "tags": ["developer", "react", "astro", "ruby", "mongodb", "web"]
+    }
+  },
+  {
+    "id": 5,
+    "content": "I am highly interested in AI and actively learning advanced AI technologies to expand my expertise in the field.",
+    "metadata": {
+      "type": "interest",
+      "tags": ["ai", "learning", "technology"]
+    }
+  },
+  {
+    "id": 6,
+    "content": "I use Git for version control to manage all my development projects efficiently.",
+    "metadata": {
+      "type": "skill",
+      "tags": ["git", "version control", "development"]
+    }
+  },
+  {
+    "id": 7,
+    "content": "I am currently taking a data analysis course with ALX Africa to enhance my analytical skills and leverage data-driven insights in my work.",
+    "metadata": {
+      "type": "education",
+      "tags": ["data analysis", "alx", "learning", "course"]
+    }
+  },
+  {
+    "id": 8,
+    "content": "I do not have experience working in international teams yet, but I am open to the opportunity in the future.",
+    "metadata": {
+      "type": "experience",
+      "tags": ["international", "teams", "openness"]
+    }
+  },
+  {
+    "id": 9,
+    "content": "My long-term career goal is to become a leading expert in AI-driven automation and data analysis, creating innovative solutions that optimize workflows.",
+    "metadata": {
+      "type": "goal",
+      "tags": ["ai", "automation", "data analysis", "career"]
+    }
+  },
+  {
+    "id": 10,
+    "content": "What motivates me in my work is the challenge of solving complex problems, continuous learning, and building solutions that have a real-world impact.",
+    "metadata": {
+      "type": "motivation",
+      "tags": ["challenge", "problem-solving", "learning", "impact"]
+    }
+  },
+  {
+    "id": 11,
+    "content": "The tools and software I use daily include Git, VS Code, React, Astro, MongoDB, and Selenium for automation.",
+    "metadata": {
+      "type": "skill",
+      "tags": ["git", "vs code", "react", "astro", "mongodb", "selenium", "tools"]
+    }
+  },
+  {
+    "id": 12,
+    "content": "I enjoy automation and frequently use Selenium to streamline repetitive tasks and improve efficiency.",
+    "metadata": {
+      "type": "interest",
+      "tags": ["automation", "selenium", "efficiency"]
+    }
+  },
+
+  {
+    "id": 13,
+    "content": "I have a successful career as a Front-End Developer, along with three certifications from freeCodeCamp: one in Relational Databases, another in Web Design, and the last in Front-End Libraries—each representing 300 hours of coursework",
+    "metadata": {
+      "type": "acheievemnts",
+      "tags": ["certificat", "formation", "acheivements"]
+    }
+  }
+]
