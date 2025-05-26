@@ -16,9 +16,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 const embeddings = new CohereEmbeddings({
-  apiKey:
-    Deno.env.get("COHERE_API_KEY") ||
-    "K1FhudIVdkXkXt1tuCcKoORkApdqs9genUeOhBay",
+  apiKey: Deno.env.get("COHERE_API_KEY"),
   model: "embed-english-v3.0",
   inputType: "search_document",
 });

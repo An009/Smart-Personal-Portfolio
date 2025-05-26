@@ -10,8 +10,7 @@ const supabaseUrl =
 const supabaseKey =
   Deno.env.get("VITE_SUPABASE_ANON_KEY") ||
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkY2hlbHRld3Fid2R5cWhpdXlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY5MjgwOTIsImV4cCI6MjA2MjUwNDA5Mn0.kA_QwfwQ6wKPlpXPPgBb-ZIsc39sKuFFWqx1m3KB18M";
-const cohereApiKey =
-  Deno.env.get("COHERE_API_KEY") || "K1FhudIVdkXkXt1tuCcKoORkApdqs9genUeOhBay";
+const cohereApiKey = Deno.env.get("COHERE_API_KEY");
 
 if (!supabaseUrl) {
   throw new Error("VITE_SUPABASE_URL environment variable is not set");
