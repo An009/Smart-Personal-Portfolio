@@ -2,16 +2,13 @@ import { CohereClient } from "npm:cohere-ai";
 import { createClient } from "npm:@supabase/supabase-js";
 
 // Load environment variables using Deno.env
-const cohereApiKey = Deno.env.get("COHERE_API_KEY")?.trim() ||
-  "K1FhudIVdkXkXt1tuCcKoORkApdqs9genUeOhBay";
-const supabaseUrl = Deno.env.get("SUPABASE_URL")?.trim() ||
-  "https://euwiwxdgzadloihaxbvt.supabase.co";
-const supabaseKey = Deno.env.get("SUPABASE_ANON_KEY")?.trim() ||
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1d2l3eGRnemFkbG9paGF4YnZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU5MTk5NTMsImV4cCI6MjA1MTQ5NTk1M30.L3EwPdxPna1_j0mUb2ohYoczQSQcjeXW2ZpnWkx2mmE";
+const cohereApiKey = Deno.env.get("COHERE_API_KEY")?.trim();
+const supabaseUrl = Deno.env.get("SUPABASE_URL")?.trim();
+const supabaseKey = Deno.env.get("SUPABASE_ANON_KEY")?.trim();
 
 if (!cohereApiKey || !supabaseUrl || !supabaseKey) {
   throw new Error(
-    "Missing environment variables. Ensure COHERE_API_KEY, SUPABASE_URL, and SUPABASE_ANON_KEY are set.",
+    "Missing environment variables. Ensure COHERE_API_KEY, SUPABASE_URL, and SUPABASE_ANON_KEY are set."
   );
 }
 
@@ -25,7 +22,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Load portfolio content from JSON file using Deno's file system API
 const portfolioContent = JSON.parse(
-  await Deno.readTextFile("portfolio-content.json"),
+  await Deno.readTextFile("portfolio-content.json")
 );
 
 // Function to generate embeddings and store them in Supabase

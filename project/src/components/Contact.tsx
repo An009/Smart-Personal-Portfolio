@@ -20,7 +20,6 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       setErrorMessage("Please fill out all fields.");
       return;
@@ -36,8 +35,8 @@ export function Contact() {
     setSuccessMessage("");
 
     try {
-      // Insert data into Supabase
-      const { data: _data, error } = await supabase
+      // Insert data into Supabase table
+      const { error: supabaseError } = await supabase
         .from("contact_submissions")
         .insert([
           {
@@ -47,18 +46,47 @@ export function Contact() {
           },
         ]);
 
-      if (error) {
-        throw error;
+      if (supabaseError) throw supabaseError;
+
+      // Send email using Edge Function via fetch
+      const response = await fetch(
+        "https://idcheltewqbwdyqhiuyg.supabase.co/functions/v1/send-contact-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            // If your function is protected, you may need to add Supabase keys here
+            apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        console.error("Edge Function Error:", data);
+        throw new Error(
+          data?.error ||
+            "An error occurred while sending your message. Please try again."
+        );
       }
 
       setSuccessMessage(
-        "Thank you for reaching out! We will get back to you soon."
+        "Thank you for reaching out! We've sent a confirmation to your email."
       );
-      setFormData({ name: "", email: "", message: "" }); // Clear the form
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Full submission error:", error);
       setErrorMessage(
-        (error as Error).message || "Something went wrong. Please try again."
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
       );
     } finally {
       setIsSubmitting(false);

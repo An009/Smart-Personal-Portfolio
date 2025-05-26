@@ -84,7 +84,15 @@
     "content": "The tools and software I use daily include Git, VS Code, React, Astro, MongoDB, and Selenium for automation.",
     "metadata": {
       "type": "skill",
-      "tags": ["git", "vs code", "react", "astro", "mongodb", "selenium", "tools"]
+      "tags": [
+        "git",
+        "vs code",
+        "react",
+        "astro",
+        "mongodb",
+        "selenium",
+        "tools"
+      ]
     }
   },
   {

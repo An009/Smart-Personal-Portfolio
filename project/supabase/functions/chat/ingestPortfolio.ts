@@ -1,26 +1,51 @@
-import { createClient } from "@supabase/supabase-js";
-import { CohereEmbeddings } from "@langchain/cohere";
-import { Document } from "langchain/document";
-import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
-import fs from "fs";
+import { createClient } from "npm:@supabase/supabase-js";
+import { CohereEmbeddings } from "npm:@langchain/cohere";
+import { Document } from "npm:langchain/document";
+import { SupabaseVectorStore } from "npm:@langchain/community/vectorstores/supabase";
 
 // Load env vars
-const supabase = createClient(Deno.env.get('SUPABASE_URL'), Deno.env.get('SUPABASE_SERVICE_ROLE_KEY'));
-const embeddings = new CohereEmbeddings({ apiKey: Deno.env.get('COHERE_API_KEY')});
+const supabaseUrl =
+  Deno.env.get("VITE_SUPABASE_URL") ||
+  "https://idcheltewqbwdyqhiuyg.supabase.co";
+const supabaseAnonKey =
+  Deno.env.get("VITE_SUPABASE_ANON_KEY") ||
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlkY2hlbHRld3Fid2R5cWhpdXlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY5MjgwOTIsImV4cCI6MjA2MjUwNDA5Mn0.kA_QwfwQ6wKPlpXPPgBb-ZIsc39sKuFFWqx1m3KB18M";
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error("Missing Supabase environment variables");
+}
 
-// Load and parse portfolio content
-const portfolio = JSON.parse(fs.readFileSync("portfolio-content.json", "utf-8"));
-const docs = portfolio.map((item: any) =>
-  new Document({
-    pageContent: item.content,
-    metadata: { type: item.type, tags: item.tags } // All metadata as one object!
-  })
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const embeddings = new CohereEmbeddings({
+  apiKey:
+    Deno.env.get("COHERE_API_KEY") ||
+    "K1FhudIVdkXkXt1tuCcKoORkApdqs9genUeOhBay",
+  model: "embed-english-v3.0",
+  inputType: "search_document",
+});
+
+// Load and parse portfolio content (Deno-style file reading)
+const portfolio = JSON.parse(await Deno.readTextFile("portfolio-content.json"));
+
+type PortfolioItem = {
+  content: string;
+  metadata: {
+    type: string;
+    tags: string[];
+  };
+};
+
+// FIXED: Use item.metadata as metadata!
+const docs = portfolio.map(
+  (item: PortfolioItem) =>
+    new Document({
+      pageContent: item.content,
+      metadata: item.metadata,
+    })
 );
+
 // Store embeddings in Supabase
-(async () => {
-  await SupabaseVectorStore.fromDocuments(docs, embeddings, {
-    client: supabase,
-    tableName: "embeddings"
-  });
-  console.log("Embeddings ingested!");
-})();
+await SupabaseVectorStore.fromDocuments(docs, embeddings, {
+  client: supabase,
+  tableName: "embeddings",
+});
+console.log("Embeddings ingested!");

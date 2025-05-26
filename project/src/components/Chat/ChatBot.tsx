@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Bot, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChatWindow } from "./ChatWindow";
-import { ChatInput } from "./ChatInput";
-import { useChat } from "../../hooks/useChat";
+import { ChatWindow } from "./ChatWindow.tsx";
+import { ChatInput } from "./ChatInput.tsx";
+import { useChat } from "../../hooks/useChat.ts";
 
 export function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
