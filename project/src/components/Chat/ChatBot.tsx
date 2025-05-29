@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Bot, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,11 +20,12 @@ export function ChatBot() {
     <>
       {/* Chat Toggle Button */}
       <button
+        type="button"
         onClick={() => setIsOpen(true)}
         className="fixed bottom-4 right-4 p-4 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition-colors hover:animate-none"
         aria-label="Open chat"
       >
-        <Bot className="w-6 h-6 animate-horizontal-spin" />
+        <Bot className="w-6 h-6 animate-wave-light" />
       </button>
 
       {/* Chat Window */}
@@ -33,12 +35,13 @@ export function ChatBot() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-4 right-4 w-[90%] sm:w-80 md:w-96 h-[60vh] sm:h-[420px] bg-gray-800 bg-opacity-20 backdrop-blur-md rounded-lg shadow-xl flex flex-col z-50"
+            className="fixed bottom-4 right-4 w-[95vw] max-w-2xl h-[80vh] bg-gray-800 bg-opacity-20 backdrop-blur-md rounded-lg shadow-xl flex flex-col z-50"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-gray-700">
               <h3 className="text-lg font-semibold">Chat with AI Assistant</h3>
               <button
+                type="button"
                 onClick={() => setIsOpen(false)}
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Close chat"

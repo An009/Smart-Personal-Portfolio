@@ -58,23 +58,55 @@
   animation: gradient 15s ease infinite;
 }
 
-@keyframes horizontal-spin {
+@keyframes wave-and-light {
   0% {
-    transform: rotateY(0deg);
+    opacity: 1;
+    transform: skewY(0deg) scale(1);
+    filter: brightness(1);
+  }
+  10% {
+    opacity: 0.85;
+    transform: skewY(-12deg) scale(1.08);
+    filter: brightness(1.2);
+  }
+  20% {
+    opacity: 1;
+    transform: skewY(10deg) scale(1.12);
+    filter: brightness(1.35);
+  }
+  30% {
+    opacity: 0.85;
+    transform: skewY(-10deg) scale(1.07);
+    filter: brightness(1.17);
+  }
+  40% {
+    opacity: 1;
+    transform: skewY(7deg) scale(1.09);
+    filter: brightness(1.25);
   }
   50% {
-    transform: rotateY(180deg);
+    opacity: 0.88;
+    transform: skewY(-6deg) scale(1.04);
+    filter: brightness(1.1);
+  }
+  60% {
+    opacity: 1;
+    transform: skewY(0deg) scale(1);
+    filter: brightness(1);
   }
   100% {
-    transform: rotateY(360deg);
+    opacity: 1;
+    transform: skewY(0deg) scale(1);
+    filter: brightness(1);
   }
 }
 
-.animate-horizontal-spin {
-  animation: horizontal-spin 1.5s ease-in-out infinite;
-  transform-style: preserve-3d;
+.animate-wave-light {
+  animation: wave-and-light 0.9s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+  display: inline-block;
+  will-change: transform, opacity, filter;
 }
 
-.animate-horizontal-spin:hover {
+.animate-wave-light:hover {
   animation-play-state: paused;
 }
