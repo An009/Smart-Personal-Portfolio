@@ -4,5 +4,6 @@
       "src": "/assets/(.*)",
       "dest": "/public/assets/$1"
     }
-  ]
+  ],
+  "deno": {}
 }
