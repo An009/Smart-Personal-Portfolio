@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "deno run --allow-read --allow-write generate-sitemap.ts && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -23,6 +23,8 @@
     "dotenv": "^16.4.7",
     "framer-motion": "^11.0.8",
     "front-matter": "^4.0.2",
+    "glob": "^11.0.2",
+    "gray-matter": "^4.0.3",
     "langchain": "^0.3.27",
     "lucide-react": "^0.344.0",
     "openai": "^4.78.1",
@@ -34,7 +36,8 @@
     "react-syntax-highlighter": "^15.6.1",
     "recharts": "^2.15.3",
     "remark-gfm": "^4.0.1",
-    "tsconfig-paths": "^4.2.0"
+    "tsconfig-paths": "^4.2.0",
+    "xmlbuilder2": "^3.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",

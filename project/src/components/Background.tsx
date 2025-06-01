@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import React from "react";
+import { useEffect, useRef } from "react";
 
 export function Background() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -7,7 +8,7 @@ export function Background() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Set canvas size
@@ -16,7 +17,7 @@ export function Background() {
       canvas.height = window.innerHeight;
     };
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     // Particle system
     const particles: Particle[] = [];
@@ -66,23 +67,23 @@ export function Background() {
     // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       // Draw gradient background
       const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-      gradient.addColorStop(0, '#0f172a');
-      gradient.addColorStop(1, '#1e293b');
+      gradient.addColorStop(0, "#0f172a");
+      gradient.addColorStop(1, "#1e293b");
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
-      particles.forEach(particle => {
+      particles.forEach((particle) => {
         particle.update();
         particle.draw();
       });
 
       // Draw connecting lines
       particles.forEach((p1, i) => {
-        particles.slice(i + 1).forEach(p2 => {
+        particles.slice(i + 1).forEach((p2) => {
           const dx = p1.x - p2.x;
           const dy = p1.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
@@ -91,7 +92,9 @@ export function Background() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 100)})`;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${
+              0.1 * (1 - distance / 100)
+            })`;
             ctx.stroke();
           }
         });
@@ -103,16 +106,13 @@ export function Background() {
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
 
   return (
     <div className="fixed inset-0 -z-10">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0"
-      />
+      <canvas ref={canvasRef} className="absolute inset-0" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/50" />
     </div>
   );

@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
+import path from "node:path";
 
 export default defineConfig({
   plugins: [react()],
@@ -39,6 +39,10 @@ export default defineConfig({
       allow: [
         path.resolve(__dirname, "./src"),
         path.resolve(__dirname, "./node_modules/lucide-react"),
+        path.resolve(
+          __dirname,
+          "./node_modules/.deno/lucide-react@0.344.0/node_modules/lucide-react"
+        ),
         path.resolve(__dirname, "./posts"),
       ],
     },

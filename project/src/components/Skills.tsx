@@ -1,4 +1,5 @@
-import { SkillCard } from "./SkillCard";
+import React from "react";
+import { SkillCard } from "./SkillCard.tsx";
 import { FaReact, FaNodeJs, FaPython } from "react-icons/fa";
 import { SiTypescript, SiMongodb, SiMysql } from "react-icons/si";
 import { MdEmail, MdAnalytics, MdAutoGraph } from "react-icons/md";
