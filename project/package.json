@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "deno run --allow-read --allow-write generate-sitemap.ts && vite build",
+    "build": "deno task generate-sitemap && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
