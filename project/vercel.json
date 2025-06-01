@@ -5,5 +5,6 @@
       "dest": "/public/assets/$1"
     }
   ],
-  "deno": {}
+  "installCommand": "npm install && curl -fsSL https://deno.land/x/install/install.sh | sh",
+  "buildCommand": "$HOME/.deno/bin/deno task generate_sitemap && npm run build"
 }
