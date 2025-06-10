@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface NavLinkProps {
   href: string;
@@ -7,7 +7,12 @@ interface NavLinkProps {
   className?: string;
 }
 
-export function NavLink({ href, onClick, children, className = '' }: NavLinkProps) {
+export function NavLink({
+  href,
+  onClick,
+  children,
+  className = "",
+}: NavLinkProps) {
   return (
     <a
       href={href}
