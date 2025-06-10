@@ -4,6 +4,5 @@
       "src": "/assets/(.*)",
       "dest": "/public/assets/$1"
     }
-  ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  ]
 }
