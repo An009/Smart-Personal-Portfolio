@@ -1,4 +1,4 @@
-import profile from "../../assets/sb.png";
+import profile from "../../assets/profile-bg.png";
 import React from "react";
 
 export function ProfileSection() {

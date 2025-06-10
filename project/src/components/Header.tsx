@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ThemeToggle } from "./ThemeToggle";
+import { ThemeToggle } from "./ThemeToggle.tsx";
 import { Menu, X } from "lucide-react";
 import { NavLink } from "./NavLink.tsx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -39,7 +39,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-300 text-gray-100${
         isScrolled
           ? "bg-gray-100 dark:bg-gray-800/50 backdrop-blur-md rounded-lg shadow-xl"
           : "bg-transparent"
@@ -53,7 +53,7 @@ export function Header() {
               handleNavClick(e, "#Hero")
             }
           >
-            <span className="text-3xl font-bold text-gray-500 dark:text-white">
+            <span className="text-3xl font-bold text-gray-400 dark:text-white">
               ⵣ
             </span>
           </NavLink>
@@ -64,7 +64,7 @@ export function Header() {
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
                 handleNavClick(e, "#about")
               }
-              className="text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-400 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
               about
             </NavLink>
@@ -73,7 +73,7 @@ export function Header() {
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
                 handleNavClick(e, "#skills")
               }
-              className="text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-400 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
               skills
             </NavLink>
@@ -82,7 +82,7 @@ export function Header() {
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
                 handleNavClick(e, "#projects")
               }
-              className="text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-400 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
               projects
             </NavLink>
@@ -91,22 +91,23 @@ export function Header() {
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
                 handleNavClick(e, "#contact")
               }
-              className="text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="text-gray-400 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
               contact
             </NavLink>
             <Link
               to="/resume"
-              className="uppercase tracking-wider text-sm font-medium relative group text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="uppercase tracking-wider text-sm font-medium relative group text-gray-400 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
               resume
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               to="/blog"
-              className="uppercase tracking-wider text-sm font-medium text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="uppercase tracking-wider text-sm font-medium relative group text-gray-400 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
               blog
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
             </Link>
           </nav>
           <ThemeToggle />
@@ -168,6 +169,7 @@ export function Header() {
               className="block py-3 px-4 hover:bg-gray-200 dark:hover:bg-gray-800/50 rounded-lg uppercase tracking-wider text-sm font-medium text-gray-500 dark:text-gray-300"
             >
               blog
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
             </Link>
           </div>
         </div>
