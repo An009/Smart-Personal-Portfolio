@@ -5,7 +5,7 @@ import App from "./App.tsx";
 import { ThemeProvider } from "./contexts/ThemeContext.tsx";
 import "./index.css";
 import { inject } from '@vercel/analytics';
-import { SpeedInsights } from '@vercel/speed-insights/react';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,4 +18,5 @@ createRoot(document.getElementById("root")!).render(
 
 if (import.meta.env.PROD) {
   inject();
+  injectSpeedInsights();
 }
