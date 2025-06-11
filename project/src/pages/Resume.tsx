@@ -52,7 +52,7 @@ const featuredProjects = [
 
 export function Resume() {
   return (
-    <div className="relative min-h-screen bg-transparent transition-colors duration-300 flex items-center justify-center pt-20">
+    <div className="relative min-h-screen bg-white dark:bg-transparent transition-colors duration-300 flex items-center justify-center pt-20">
       <div className="relative max-w-6xl w-full p-8 bg-white/80 dark:bg-[#1c1a2e]/90 rounded-3xl shadow-2xl mt-10 mb-10 backdrop-blur-lg border border-gray-200 dark:border-[#35316a] flex flex-col gap-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">

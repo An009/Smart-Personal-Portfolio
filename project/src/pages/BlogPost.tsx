@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { format } from "date-fns";
-import { getPostById } from "../lib/posts";
-import type { Post } from "../lib/posts";
-import MarkdownContent from "../components/MarkdownContent";
-import { ProfileImage } from "../components/ProfileImage";
+import { getPostById } from "../lib/posts.ts";
+import type { Post } from "../lib/posts.ts";
+import MarkdownContent from "../components/MarkdownContent.tsx";
+import ProfileImage from "../assets/profile-bg.png";
 
 export function BlogPost() {
   const { id } = useParams<{ id: string }>();
@@ -133,10 +133,10 @@ export function BlogPost() {
                 About the Author
               </h3>
               <div className="flex flex-col sm:flex-row items-start gap-6 bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg transition-colors duration-300">
-                <ProfileImage
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80"
+                <img
+                  src={ProfileImage}
                   alt="Profile"
-                  size="w-32 h-32 rounded-full"
+                  className="w-40 h-40 object-cover rounded-full"
                 />
                 <div className="flex-1">
                   <h4 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
