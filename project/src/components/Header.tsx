@@ -7,12 +7,21 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(globalThis.scrollY > 50);
+      
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      if (totalHeight > 0) {
+        setScrollProgress((scrolled / totalHeight) * 100);
+      } else {
+        setScrollProgress(0);
+      }
     };
     globalThis.addEventListener("scroll", handleScroll);
     return () => globalThis.removeEventListener("scroll", handleScroll);
@@ -25,10 +34,8 @@ export function Header() {
     e.preventDefault();
 
     if (location.pathname !== "/") {
-      // Redirect to Home page with the section as a hash
       navigate(`/${href}`);
     } else {
-      // If already on the Home page, scroll to the section
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
@@ -174,6 +181,11 @@ export function Header() {
           </div>
         </div>
       )}
+      {/* Scroll Progress Line */}
+      <div
+        className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-100 ease-out"
+        style={{ width: `${scrollProgress}%` }}
+      />
     </header>
   );
 }
