@@ -99,10 +99,10 @@ console.log("Chatbot Edge Function running...");
 serve(async (req) => {
   try {
     if (req.method !== "POST") {
-      return new Response(
-        JSON.stringify({ error: "Method Not Allowed" }),
-        { status: 405, headers: { "Content-Type": "application/json" } }
-      );
+      return new Response(JSON.stringify({ error: "Method Not Allowed" }), {
+        status: 405,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     const { message } = await req.json();
@@ -114,17 +114,20 @@ serve(async (req) => {
       );
     }
 
-    const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${Deno.env.get("OPENAI_API_KEY")}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: message }],
-      }),
-    });
+    const openaiRes = await fetch(
+      "https://api.openai.com/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${Deno.env.get("OPENAI_API_KEY")}`,
+        },
+        body: JSON.stringify({
+          model: "gpt-3.5-turbo",
+          messages: [{ role: "user", content: message }],
+        }),
+      }
+    );
 
     if (!openaiRes.ok) {
       const error = await openaiRes.text();
@@ -135,18 +138,20 @@ serve(async (req) => {
     }
 
     const openaiData = await openaiRes.json();
-    const botResponse = openaiData.choices[0]?.message?.content ?? "Sorry, I couldn't understand that.";
+    const botResponse =
+      openaiData.choices[0]?.message?.content ??
+      "Sorry, I couldn't understand that.";
 
-    return new Response(
-      JSON.stringify({ botResponse }),
-      { status: 200, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ botResponse }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (err) {
     console.error("Unexpected error:", err);
-    return new Response(
-      JSON.stringify({ error: "Internal Server Error" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 });
 ```
@@ -188,8 +193,12 @@ const Chatbot = () => {
     <div className="max-w-md mx-auto p-4 border rounded-lg shadow-md">
       <div className="h-64 overflow-y-auto p-2 border-b">
         {messages.map((msg, index) => (
-          <p key={index} className={msg.role === "user" ? "text-right" : "text-left"}>
-            <strong>{msg.role === "user" ? "You" : "Bot"}:</strong> {msg.content}
+          <p
+            key={index}
+            className={msg.role === "user" ? "text-right" : "text-left"}
+          >
+            <strong>{msg.role === "user" ? "You" : "Bot"}:</strong>{" "}
+            {msg.content}
           </p>
         ))}
       </div>
@@ -233,10 +242,10 @@ export default Chatbot;
 
 ## References
 
-- <a href="https://platform.openai.com/docs" target="_blank">OpenAI Documentation</a>  
-- <a href="https://supabase.com/docs" target="_blank">Supabase Documentation</a>  
-- <a href="https://supabase.com/docs/guides/functions" target="_blank">Supabase Edge Functions</a>  
-- <a href="https://github.com/pgvector/pgvector" target="_blank">pgvector</a>  
-- <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>  
-- <a href="https://axios-http.com/" target="_blank">Axios</a>  
-- <a href="https://reactjs.org/" target="_blank">React</a>
+- [OpenAI Documentation](https://platform.openai.com/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Supabase Edge Functions](https://supabase.com/docs/guides/functions)
+- [pgvector](https://github.com/pgvector/pgvector)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/)
+- [React](https://reactjs.org/)

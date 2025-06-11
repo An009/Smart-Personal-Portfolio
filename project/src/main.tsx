@@ -11,12 +11,12 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
       <App />
-      <SpeedInsights />
     </ThemeProvider>
   </StrictMode>
 );
 
 if (import.meta.env.PROD) {
   inject();
+  injectSpeedInsights();
   injectSpeedInsights();
 }
