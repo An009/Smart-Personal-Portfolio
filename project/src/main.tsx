@@ -18,5 +18,4 @@ createRoot(document.getElementById("root")!).render(
 if (import.meta.env.PROD) {
   inject();
   injectSpeedInsights();
-  injectSpeedInsights();
 }
