@@ -7,6 +7,16 @@
   }
 }
 
+/* New animation for reverse spin */
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
 @keyframes float {
   0%,
   100% {
@@ -31,6 +41,11 @@
 
 .animate-spin-slow {
   animation: spin-slow 10s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  /* New class definition */
+  animation: spin-slow-reverse 15s linear infinite; /* Slower reverse spin */
 }
 
 .animate-float {

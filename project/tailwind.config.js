@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       animation: {
-        "spin-slow": "spin 10s linear infinite",
+        "spin-slow": "spin-slow 10s linear infinite",
+        "spin-slow-reverse": "spin-slow-reverse 15s linear infinite",
         "pulse-slow": "pulse 3s ease-in-out infinite",
         float: "float 6s ease-in-out infinite",
         gradient: "gradient 15s ease infinite",
