@@ -1,8 +1,7 @@
-import { ChatCohere } from "@langchain/cohere";
-import { HumanMessage } from "langchain/core/messages";
+import { Cohere } from "@langchain/cohere";
 import { getRelevantDocs } from "./retrieveAndChat.ts";
 
-const cohere = new ChatCohere({ apiKey: Deno.env.get("COHERE_API_KEY") });
+const cohere = new Cohere({ apiKey: Deno.env.get("COHERE_API_KEY") });
 
 const FALLBACK_CONTEXT = `
 I am Anouar Tizgui, a developer from Tinghir.
@@ -75,9 +74,9 @@ export async function portfolioChatbot(userQuery: string): Promise<string> {
 
   const prompt = PROMPT_TEMPLATE.replace(
     "{resumeContext}",
-    resumeContext
+    resumeContext,
   ).replace("{question}", userQuery);
 
-  const response = await cohere.invoke([new HumanMessage(prompt)]);
-  return response.content;
+  const response = await cohere.invoke(prompt);
+  return response;
 }
