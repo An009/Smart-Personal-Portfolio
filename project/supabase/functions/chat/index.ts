@@ -1,6 +1,5 @@
-import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
+import { serve } from "httpserver";
 import { portfolioChatbot } from "./chatbot.ts";
-// import { cohere } from "./cohere.ts";
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":

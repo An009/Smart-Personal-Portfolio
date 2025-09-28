@@ -1,7 +1,7 @@
-import { createClient } from "npm:@supabase/supabase-js";
-import { CohereEmbeddings } from "npm:@langchain/cohere";
-import { Document } from "npm:langchain/document";
-import { SupabaseVectorStore } from "npm:@langchain/community/vectorstores/supabase";
+import { createClient } from "supabase";
+import { CohereEmbeddings } from "@langchain/cohere";
+import { Document } from "langchain/document";
+import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 
 // Load env vars
 const supabaseUrl =
