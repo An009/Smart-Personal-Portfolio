@@ -2,9 +2,11 @@ import { ChatCohere } from "@langchain/cohere";
 import { getRelevantDocs } from "./retrieveAndChat.ts";
 import { HumanMessage } from "langchain_core/messages";
 
+// Replace "command-r-plus-08-2024" with another live model if needed, such as:
+// "command-r-08-2024" or "command-r7b-12-2024"
 const cohere = new ChatCohere({
   apiKey: Deno.env.get("COHERE_API_KEY"),
-  model: "command-r",
+  model: "command-r-plus-08-2024",
 });
 
 const FALLBACK_CONTEXT = `
