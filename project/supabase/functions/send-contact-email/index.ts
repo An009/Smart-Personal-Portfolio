@@ -17,12 +17,14 @@ serve(async (req) => {
       ...corsHeaders,
       "Content-Type": "application/json",
     };
-    // Handle OPTIONS request for CORS preflight
-    if (req.method === "OPTIONS")
+    5;
+    // Handle OPTIONS request for CORS preflight`
+    if (req.method === "OPTIONS") {
       return new Response(null, {
         headers,
         status: 204,
       });
+    }
     // Only allow POST requests
     if (req.method !== "POST") {
       return new Response(
@@ -32,7 +34,7 @@ serve(async (req) => {
         {
           status: 405,
           headers,
-        }
+        },
       );
     }
     // Get the form data from the request body
@@ -46,7 +48,7 @@ serve(async (req) => {
         {
           status: 400,
           headers,
-        }
+        },
       );
     }
     console.log("Received data:", {
@@ -170,7 +172,9 @@ serve(async (req) => {
           </div>
           
           <div class="footer">
-            <p>© ${new Date().getFullYear()} ${SITE_NAME}. All rights reserved.</p>
+            <p>© ${
+      new Date().getFullYear()
+    } ${SITE_NAME}. All rights reserved.</p>
             <p>${currentDate}</p>
           </div>
         </div>
@@ -283,7 +287,9 @@ serve(async (req) => {
           
           <div class="footer">
             <p>This message was sent from your website contact form at ${SITE_NAME}.</p>
-            <p>© ${new Date().getFullYear()} ${SITE_NAME}. All rights reserved.</p>
+            <p>© ${
+      new Date().getFullYear()
+    } ${SITE_NAME}. All rights reserved.</p>
           </div>
         </div>
       </div>
@@ -327,16 +333,15 @@ serve(async (req) => {
       {
         status: 200,
         headers,
-      }
+      },
     );
   } catch (error) {
     console.error("Error in edge function:", error);
     return new Response(
       JSON.stringify({
-        error:
-          typeof error === "object" && error !== null && "message" in error
-            ? error.message || "An unexpected error occurred"
-            : "An unexpected error occurred",
+        error: typeof error === "object" && error !== null && "message" in error
+          ? error.message || "An unexpected error occurred"
+          : "An unexpected error occurred",
         details: error,
       }),
       {
@@ -345,7 +350,7 @@ serve(async (req) => {
           ...corsHeaders,
           "Content-Type": "application/json",
         },
-      }
+      },
     );
   }
 });

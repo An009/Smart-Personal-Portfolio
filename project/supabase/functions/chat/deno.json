@@ -4,7 +4,7 @@
     "@langchain/cohere": "npm:@langchain/cohere@^0.3.3",
     "supabase_vector_store": "npm:@langchain/community@^0.3.44/vectorstores/supabase",
     "langchain_document": "npm:langchain@^0.3.27/document",
-    "langchain_core_messages": "npm:@langchain/core@^0.1.75/messages",
+    "langchain_core": "npm:@langchain/core@0.1.58",
     "httpserver": "https://deno.land/std@0.224.0/http/server.ts"
   }
 }
