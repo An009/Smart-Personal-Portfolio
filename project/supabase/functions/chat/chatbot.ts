@@ -2,7 +2,10 @@ import { ChatCohere } from "@langchain/cohere";
 import { getRelevantDocs } from "./retrieveAndChat.ts";
 import { HumanMessage } from "langchain_core/messages";
 
-const cohere = new ChatCohere({ apiKey: Deno.env.get("COHERE_API_KEY") });
+const cohere = new ChatCohere({
+  apiKey: Deno.env.get("COHERE_API_KEY"),
+  model: "command-r",
+});
 
 const FALLBACK_CONTEXT = `
 I am Anouar Tizgui, a developer from Tinghir.
