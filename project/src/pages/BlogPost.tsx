@@ -5,7 +5,7 @@ import { format } from "date-fns";
 import { getPostById } from "../lib/posts.ts";
 import type { Post } from "../lib/posts.ts";
 import MarkdownContent from "../components/MarkdownContent.tsx";
-import ProfileImage from "../assets/profile-bg.png";
+import ProfileImage from "../assets/profile-bg.webp";
 
 export function BlogPost() {
   const { id } = useParams<{ id: string }>();
