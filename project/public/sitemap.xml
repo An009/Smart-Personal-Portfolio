@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://anouarodes.com/</loc>
-    <lastmod>2026-16-03</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://anouarodes.com/resume</loc>
-    <lastmod>2026-16-03</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://anouarodes.com/blog</loc>
-    <lastmod>2026-16-03</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://anouarodes.com/blog/firstpost</loc>
-    <lastmod>2026-16-03</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://anouarodes.com/blog/secondpost</loc>
-    <lastmod>2026-16-03</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://anouarcodes.tech/blog/thirdpost</loc>
-    <lastmod>2026-16-03</lastmod>
-    <priority>0.7</priority>
-  </url>
+
+<url>
+<loc>https://anouarodes.com/</loc>
+<lastmod>2026-03-16</lastmod>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://anouarodes.com/resume</loc>
+<lastmod>2026-03-16</lastmod>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://anouarodes.com/blog</loc>
+<lastmod>2026-03-16</lastmod>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://anouarodes.com/blog/firstpost</loc>
+<lastmod>2026-03-16</lastmod>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://anouarodes.com/blog/secondpost</loc>
+<lastmod>2026-03-16</lastmod>
+<priority>0.7</priority>
+</url>
+
+<url>
+<loc>https://anouarodes.com/blog/thirdpost</loc>
+<lastmod>2026-03-16</lastmod>
+<priority>0.7</priority>
+</url>
+
 </urlset>
